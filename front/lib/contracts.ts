@@ -26,10 +26,10 @@ export const EXPLORER_URL = 'https://explorer.testnet.riselabs.xyz';
 export const METADATA_API = '';
 
 export const CONTRACTS = {
-    UnicornX_NFT: '0x0000000000000000000000000000000000000000',
-    PackOpener: '0x0000000000000000000000000000000000000000',
-    TournamentManager: '0x0000000000000000000000000000000000000000',
-    MarketplaceV2: '0x0000000000000000000000000000000000000000',
+    UnicornX_NFT: '0x45E817D93915D484bac01d27E26d19F30715B6Bc',
+    PackOpener: '0x8146c0f42824566373f146A200DE85c40d561b9e',
+    TournamentManager: '0xbccAFD09B909bb2Ca87F10067cBCF10212C562B3',
+    MarketplaceV2: '0x04Cd3Ce1639b9b2Ca63dbd9bE6ec3a4B5f4Dd161',
 } as const;
 
 // ============ ABIs (minimal for frontend) ============
