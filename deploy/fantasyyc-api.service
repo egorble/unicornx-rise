@@ -1,0 +1,32 @@
+[Unit]
+Description=FantasyYC RISE API Server (Express.js on port 3007)
+Documentation=https://github.com/unicornx/fantasyyc
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=fantasyyc
+Group=fantasyyc
+WorkingDirectory=/opt/fantasyyc/server
+ExecStart=/usr/bin/node index.js
+EnvironmentFile=/opt/fantasyyc/.env
+Environment=NODE_ENV=production
+Environment=PORT=3007
+
+Restart=always
+RestartSec=5
+StartLimitBurst=5
+StartLimitIntervalSec=60
+
+KillSignal=SIGTERM
+TimeoutStopSec=30
+
+NoNewPrivileges=true
+
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=fantasyyc-api
+
+[Install]
+WantedBy=multi-user.target

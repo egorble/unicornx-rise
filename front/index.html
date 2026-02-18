@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#F26522" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="UnicornX" />
+    <meta name="description" content="Fantasy league for YC startups. Collect NFT cards, build your deck, compete in tournaments." />
+    <link rel="icon" type="image/png" href="/unicornx.png" />
+    <link rel="apple-touch-icon" href="/unicornx.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <title>UnicornX</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              yc: {
+                orange: '#F26522',
+                // Cleaner greens/reds for data
+                green: '#10B981', 
+                red: '#EF4444',
+                
+                // Dark Mode
+                dark: '#050505',
+                'dark-panel': '#121212',
+                'dark-border': '#262626',
+                
+                // Light Mode
+                light: '#FFFFFF',
+                'light-panel': '#F3F4F6',
+                'light-border': '#E5E7EB',
+                
+                // Text
+                'text-primary': '#111827', // Light mode text
+                'text-secondary': '#6B7280',
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            animation: {
+              'float': 'float 4s ease-in-out infinite',
+              'spin-slow': 'spin 10s linear infinite',
+              'spin-reverse-slow': 'spin-reverse 12s linear infinite',
+              'pulse-fast': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'marquee': 'marquee 30s linear infinite',
+              'slideUp': 'slideUp 0.3s ease-out',
+              'fadeIn': 'fadeIn 0.3s ease-out',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0px) rotateY(0deg)' },
+                '50%': { transform: 'translateY(-10px) rotateY(5deg)' },
+              },
+              'spin-reverse': {
+                from: { transform: 'rotate(360deg)' },
+                to: { transform: 'rotate(0deg)' },
+              },
+              marquee: {
+                '0%': { transform: 'translateX(0%)' },
+                '100%': { transform: 'translateX(-50%)' },
+              },
+              slideUp: {
+                from: { transform: 'translateY(100%)', opacity: 0 },
+                to: { transform: 'translateY(0)', opacity: 1 },
+              },
+              fadeIn: {
+                from: { opacity: 0 },
+                to: { opacity: 1 },
+              },
+              fadeInUp: {
+                from: { opacity: 0, transform: 'translateY(10px)' },
+                to: { opacity: 1, transform: 'translateY(0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      .font-mono {
+        font-family: 'JetBrains Mono', monospace;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #374151; 
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #F26522; 
+      }
+      
+      .perspective-1000 {
+        perspective: 1000px;
+      }
+      .transform-style-3d {
+        transform-style: preserve-3d;
+      }
+      .backface-hidden {
+        backface-visibility: hidden;
+      }
+      .rotate-y-180 {
+        transform: rotateY(180deg);
+      }
+      /* Marquee pause on hover */
+      .animate-marquee:hover {
+        animation-play-state: paused;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "recharts": "https://esm.sh/recharts@^3.7.0",
+    "gsap": "https://esm.sh/gsap@3.12.5"
+  }
+}
+</script>
+</head>
+  <body class="bg-yc-light dark:bg-yc-dark text-yc-text-primary dark:text-white">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

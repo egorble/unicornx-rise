@@ -1,0 +1,25 @@
+{
+  "network": "rise",
+  "networkName": "RISE Testnet",
+  "chainId": 11155931,
+  "explorer": "https://explorer.testnet.riselabs.xyz",
+  "timestamp": "",
+  "deployer": "",
+  "deployMode": "UUPS Proxy",
+  "proxies": {
+    "UnicornX_NFT": "0x0000000000000000000000000000000000000000",
+    "PackOpener": "0x0000000000000000000000000000000000000000",
+    "TournamentManager": "0x0000000000000000000000000000000000000000",
+    "MarketplaceV2": "0x0000000000000000000000000000000000000000"
+  },
+  "implementations": {
+    "UnicornX_NFT": "0x0000000000000000000000000000000000000000",
+    "PackOpener": "0x0000000000000000000000000000000000000000",
+    "TournamentManager": "0x0000000000000000000000000000000000000000",
+    "MarketplaceV2": "0x0000000000000000000000000000000000000000"
+  },
+  "configuration": {
+    "owner": "",
+    "treasury": "0x233c8C54F25734B744E522bdC1Eed9cbc8C97D0c"
+  }
+}

@@ -1,0 +1,32 @@
+[Unit]
+Description=FantasyYC RISE Metadata Server (Express.js on port 3006)
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=fantasyyc
+Group=fantasyyc
+WorkingDirectory=/opt/fantasyyc/backend
+ExecStart=/usr/bin/node server.js
+EnvironmentFile=/opt/fantasyyc/.env
+Environment=NODE_ENV=production
+Environment=PORT=3006
+Environment=RPC_URL=https://testnet.riselabs.xyz
+
+Restart=always
+RestartSec=5
+StartLimitBurst=5
+StartLimitIntervalSec=60
+
+KillSignal=SIGTERM
+TimeoutStopSec=10
+
+NoNewPrivileges=true
+
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=fantasyyc-metadata
+
+[Install]
+WantedBy=multi-user.target
